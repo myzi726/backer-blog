@@ -43,13 +43,13 @@ const LoginPage = () => {
 
   return (
     <div className="flex flex-col items-center justify-center h-screen">
-      <div className="text-3xl font-bold mb-5">Login</div>
-      <div className="flex flex-col gap-4">
+      <div className="text-6xl font-bold mb-5">LOGIN</div>
+      <div className="flex flex-col gap-4 my-5">
         <input
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           type="text"
-          placeholder="아이디"
+          placeholder="아이디를 입력하세요"
           className="border-2 border-gray-300 p-2 rounded-md w-72"
         />
         <input
@@ -57,18 +57,24 @@ const LoginPage = () => {
           onChange={(e) => setPassword(e.target.value)}
           onKeyUp={(e) => checkCapsLock(e)}
           type="password"
-          placeholder="비밀번호"
+          placeholder="비밀번호를 입력하세요"
           className="border-2 border-gray-300 p-2 rounded-md"
         />
         <span className="text-sm text-red-500">
           {capsLockFlag ? "Caps Lock이 켜져 있습니다" : ""}
         </span>
         <button
-          className="bg-black rounded-md p-3 text-white font-bold text-lg"
+          className="bg-black rounded-md p-3 text-white font-bold text-lg cursor-pointer"
           onClick={() => handleLogin()}
         >
-          로그인
+          LOGIN
         </button>
+        <div
+          className="text-sm text-gray-500 font-bold text-center cursor-pointer"
+          onClick={() => router.push("/auth/signup")}
+        >
+          Join us?
+        </div>
       </div>
     </div>
   );
