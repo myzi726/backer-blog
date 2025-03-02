@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Jua } from "next/font/google";
-import "./globals.css";
 
 const jua = Jua({ subsets: ["latin"], weight: ["400"] });
 
@@ -9,7 +8,7 @@ export const metadata: Metadata = {
   description: "backer blog",
 };
 
-export default function RootLayout({
+export default function AuthLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
